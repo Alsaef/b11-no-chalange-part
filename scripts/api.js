@@ -42,7 +42,7 @@ const showLevelBtn = (levels) => {
     levels.forEach(btn => {
         const div = document.createElement("div")
         div.innerHTML = `
-    <button id='btn-${btn.level_no}' onClick="lessonWordFetching(${btn.level_no})" class="btn btn-outline btn-primary hover:text-white"><img src="./assets/fa-book-open.png" alt="">Lesson-${btn.level_no}</button>
+    <button id='btn-${btn.level_no}' onClick="lessonWordFetching(${btn.level_no})" class="btn btn-outline btn-primary hover:text-white">  <i class="fa-solid fa-book-open"></i> Lesson-${btn.level_no}</button>
     `
         showBtn.appendChild(div)
     });
@@ -92,11 +92,11 @@ const wordLessonShow = (words) => {
 
         div.innerHTML = `
              <div class='bg-white px-3 py-3 rounded-md'>
-                 <div class="card  bg-gray-200 card-lg shadow-sm py-4 px-3 h-[300px]">
+                 <div class="card  bg-gray-200 hover:bg-blue-300 duration-300 card-lg shadow-sm py-4 px-3 h-[300px]">
                 <div class="card-body flex flex-col items-center">
                   <h2 class="card-title font-bold text-center">${word.word}</h2>
                   <p class="font-bold">Meaning /Pronounciation</p>
-                  <p class="font-bold py-4 text-2xl text-[#18181B]">"${word.meaning === null ? 'অর্থ পাওয়া যায়নি' : `${word.meaning}`}"</p>
+                  <p class="font-bold py-4 text-2xl text-[#18181B]"> ${word.meaning}"</p>
                   
                 </div>
                 <div class="flex justify-between card-actions">
@@ -157,7 +157,7 @@ const showSingleWordData=(word)=>{
             </h2>
             <div class="mt-2">
               <p class="font-semibold">Meaning</p>
-              <p class="text-gray-700">${word.meaning===null?`<span>অর্থ পাওয়া যায়নি</span>`:`<span>${word.meaning}</span>`}</p>
+              <p class="text-gray-700"><span>${word.meaning}</span>}</p>
             </div>
             <div class="mt-3">
               <p class="font-semibold">Example</p>
